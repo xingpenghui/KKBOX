@@ -6,8 +6,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="KKBOX" />
+        <module name="KKBOX_Commom" />
+        <module name="KKBOX_Domain" />
+        <module name="KKBOX_Mapper" />
+        <module name="KKBOX_Web" />
+        <module name="KKBOX_WebController" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="KKBOX_Commen" target="1.8" />
+      <module name="KKOBX_Mapper" target="1.8" />
+      <module name="WebController" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
