@@ -1,4 +1,4 @@
-package com.kkbox.service;
+package com.kkbox.service.user;
 
 import com.kkbox.common.result.R;
 import com.kkbox.domain.Blacklist;

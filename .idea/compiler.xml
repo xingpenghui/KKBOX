@@ -13,6 +13,7 @@
         <module name="KKBOX_ServiceImpl" />
         <module name="KKBOX_Web" />
         <module name="KKBOX_WebController" />
+        <module name="mq" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
