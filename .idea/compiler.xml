@@ -9,12 +9,15 @@
         <module name="KKBOX_Commom" />
         <module name="KKBOX_Domain" />
         <module name="KKBOX_Mapper" />
+        <module name="KKBOX_Service" />
+        <module name="KKBOX_ServiceImpl" />
         <module name="KKBOX_Web" />
         <module name="KKBOX_WebController" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="KKBOX_Commen" target="1.8" />
+      <module name="KKBOX_ServiceProvicer" target="1.8" />
       <module name="KKOBX_Mapper" target="1.8" />
       <module name="WebController" target="1.8" />
     </bytecodeTargetLevel>

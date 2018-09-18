@@ -14,6 +14,8 @@
         <module>KKBOX_Web</module>
         <module>KKBOX_Mapper</module>
         <module>KKBOX_WebController</module>
+        <module>KKBOX_Service</module>
+        <module>KKBOX_ServiceImpl</module>
     </modules>
     <!--jar依赖的版本号-->
     <properties>
