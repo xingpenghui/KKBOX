@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kkbox.mapper.MvcollectionMapper">
+  <resultMap id="BaseResultMap" type="com.kkbox.domain.Mvcollection">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="mid" jdbcType="VARCHAR" property="mid" />
+    <result column="uid" jdbcType="VARCHAR" property="uid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, mid, uid
+  </sql>
+  <select id="selectByMid"  resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_mvcollection
+    where mid = #{mid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByMid" parameterType="java.lang.Integer">
+    delete from t_mvcollection
+    where mid = #{mid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kkbox.domain.Mvcollection">
+    insert into t_mvcollection (id, mid, uid)
+    values (#{id,jdbcType=INTEGER}, #{mid,jdbcType=VARCHAR}, #{uid,jdbcType=VARCHAR})
+  </insert>
+</mapper>

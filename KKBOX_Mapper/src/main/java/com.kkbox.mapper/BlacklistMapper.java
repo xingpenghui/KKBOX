@@ -1,7 +1,6 @@
 
 package com.kkbox.mapper;
 
-import com.kkbox.common.result.R;
 import com.kkbox.domain.Blacklist;
 
 import java.util.List;
