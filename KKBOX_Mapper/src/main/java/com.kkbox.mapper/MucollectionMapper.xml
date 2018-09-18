@@ -3,67 +3,25 @@
 <mapper namespace="com.kkbox.mapper.MucollectionMapper">
   <resultMap id="BaseResultMap" type="com.kkbox.domain.Mucollection">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="mid" jdbcType="VARCHAR" property="mid" />
-    <result column="uid" jdbcType="VARCHAR" property="uid" />
+    <result column="mid" jdbcType="int" property="mid" />
+    <result column="uid" jdbcType="int" property="uid" />
   </resultMap>
   <sql id="Base_Column_List">
     id, mid, uid
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByMid"  resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from t_mucollection
-    where id = #{id,jdbcType=INTEGER}
+    where mid = #{mid,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <delete id="deleteByMid" parameterType="java.lang.Integer">
     delete from t_mucollection
-    where id = #{id,jdbcType=INTEGER}
+    where mid = #{mid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.kkbox.domain.Mucollection">
+  <insert id="insert" parameterType="com.kkbox.domain.Mucollection" useGeneratedKeys="true" keyProperty="id">
     insert into t_mucollection (id, mid, uid)
-    values (#{id,jdbcType=INTEGER}, #{mid,jdbcType=VARCHAR}, #{uid,jdbcType=VARCHAR})
+    values ( #{mid}, #{uid})
   </insert>
-  <insert id="insertSelective" parameterType="com.kkbox.domain.Mucollection">
-    insert into t_mucollection
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="mid != null">
-        mid,
-      </if>
-      <if test="uid != null">
-        uid,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="mid != null">
-        #{mid,jdbcType=VARCHAR},
-      </if>
-      <if test="uid != null">
-        #{uid,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.kkbox.domain.Mucollection">
-    update t_mucollection
-    <set>
-      <if test="mid != null">
-        mid = #{mid,jdbcType=VARCHAR},
-      </if>
-      <if test="uid != null">
-        uid = #{uid,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.kkbox.domain.Mucollection">
-    update t_mucollection
-    set mid = #{mid,jdbcType=VARCHAR},
-      uid = #{uid,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
+
 </mapper>

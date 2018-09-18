@@ -3,8 +3,8 @@
 <mapper namespace="com.kkbox.mapper.MvcollectionMapper">
   <resultMap id="BaseResultMap" type="com.kkbox.domain.Mvcollection">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="mid" jdbcType="VARCHAR" property="mid" />
-    <result column="uid" jdbcType="VARCHAR" property="uid" />
+    <result column="mid" jdbcType="int" property="mid" />
+    <result column="uid" jdbcType="int" property="uid" />
   </resultMap>
   <sql id="Base_Column_List">
     id, mid, uid
@@ -13,14 +13,14 @@
     select 
     <include refid="Base_Column_List" />
     from t_mvcollection
-    where mid = #{mid,jdbcType=INTEGER}
+    where mid = #{mid}
   </select>
   <delete id="deleteByMid" parameterType="java.lang.Integer">
     delete from t_mvcollection
-    where mid = #{mid,jdbcType=INTEGER}
+    where mid = #{mid}
   </delete>
   <insert id="insert" parameterType="com.kkbox.domain.Mvcollection">
     insert into t_mvcollection (id, mid, uid)
-    values (#{id,jdbcType=INTEGER}, #{mid,jdbcType=VARCHAR}, #{uid,jdbcType=VARCHAR})
+    values (#{id,jdbcType=INTEGER}, #{mid}, #{uid})
   </insert>
 </mapper>

@@ -22,9 +22,6 @@ public class BlacklistController {
 
     @RequestMapping("blacklistsave.do")
     public R save(Blacklist blacklist) {
-        User user = new User();
-        R r = service.save(blacklist);
-
 
         return null;
     }

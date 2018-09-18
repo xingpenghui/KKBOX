@@ -1,8 +1,6 @@
 package com.kkbox.domain;
 
-import java.io.Serializable;
-
-public class Blacklist implements Serializable {
+public class Blacklist {
     private Integer id;
 
     private Integer uid;

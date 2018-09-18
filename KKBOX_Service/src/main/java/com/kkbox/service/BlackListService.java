@@ -2,6 +2,7 @@ package com.kkbox.service;
 
 import com.kkbox.common.result.R;
 import com.kkbox.domain.Blacklist;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 

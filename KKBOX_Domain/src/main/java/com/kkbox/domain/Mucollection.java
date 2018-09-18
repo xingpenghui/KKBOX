@@ -3,9 +3,9 @@ package com.kkbox.domain;
 public class Mucollection {
     private Integer id;
 
-    private String mid;
+    private int mid;
 
-    private String uid;
+    private int uid;
 
     public Integer getId() {
         return id;
@@ -15,19 +15,19 @@ public class Mucollection {
         this.id = id;
     }
 
-    public String getMid() {
+    public int getMid() {
         return mid;
     }
 
-    public void setMid(String mid) {
-        this.mid = mid == null ? null : mid.trim();
+    public void setMid(int mid) {
+        this.mid = mid;
     }
 
-    public String getUid() {
+    public int getUid() {
         return uid;
     }
 
-    public void setUid(String uid) {
-        this.uid = uid == null ? null : uid.trim();
+    public void setUid(int uid) {
+        this.uid = uid;
     }
 }

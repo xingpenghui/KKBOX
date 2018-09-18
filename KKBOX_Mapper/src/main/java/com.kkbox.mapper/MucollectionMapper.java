@@ -2,16 +2,13 @@ package com.kkbox.mapper;
 
 import com.kkbox.domain.Mucollection;
 
+import java.util.List;
+
 public interface MucollectionMapper {
-    int deleteByPrimaryKey(Integer id);
+    int deleteByMid(Integer mid);
 
     int insert(Mucollection record);
 
-    int insertSelective(Mucollection record);
+    List<Mucollection> selectAll();
 
-    Mucollection selectByPrimaryKey(Integer id);
-
-    int updateByPrimaryKeySelective(Mucollection record);
-
-    int updateByPrimaryKey(Mucollection record);
 }
