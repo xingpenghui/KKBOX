@@ -11,6 +11,6 @@
 
     <artifactId>KKBOX_Web</artifactId>
     <version>1.0.0</version>
-
+<packaging>war</packaging>
 
 </project>

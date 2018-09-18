@@ -11,6 +11,12 @@
 
     <artifactId>KKBOX_Service</artifactId>
     <version>1.0.0</version>
-
+<dependencies>
+    <dependency>
+        <groupId>com.yyfy</groupId>
+        <artifactId>KKBOX_Mapper</artifactId>
+        <version>1.0.0</version>
+    </dependency>
+</dependencies>
 
 </project>
