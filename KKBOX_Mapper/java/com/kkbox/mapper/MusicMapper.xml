@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kkbox.mapper.MusicMapper">
+  <resultMap id="BaseResultMap" type="com.kkbox.domain.Music">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="songerid" jdbcType="INTEGER" property="songerid" />
+    <result column="musicname" jdbcType="VARCHAR" property="musicname" />
+    <result column="lyrics" jdbcType="VARCHAR" property="lyrics" />
+    <result column="albuname" jdbcType="VARCHAR" property="albuname" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="collection" jdbcType="INTEGER" property="collection" />
+    <result column="comment" jdbcType="INTEGER" property="comment" />
+    <result column="playcount" jdbcType="INTEGER" property="playcount" />
+    <result column="thumbnum" jdbcType="INTEGER" property="thumbnum" />
+    <result column="uploadtime" jdbcType="DATE" property="uploadtime" />
+    <result column="min" jdbcType="TIME" property="min" />
+    <result column="mid" jdbcType="INTEGER" property="mid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, songerid, musicname, lyrics, albuname, type, collection, comment, playcount, 
+    thumbnum, uploadtime, min, mid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_music
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_music
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kkbox.domain.Music">
+    insert into t_music (id, songerid, musicname, 
+      lyrics, albuname, type, 
+      collection, comment, playcount, 
+      thumbnum, uploadtime, min, 
+      mid)
+    values (#{id,jdbcType=INTEGER}, #{songerid,jdbcType=INTEGER}, #{musicname,jdbcType=VARCHAR}, 
+      #{lyrics,jdbcType=VARCHAR}, #{albuname,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, 
+      #{collection,jdbcType=INTEGER}, #{comment,jdbcType=INTEGER}, #{playcount,jdbcType=INTEGER}, 
+      #{thumbnum,jdbcType=INTEGER}, #{uploadtime,jdbcType=DATE}, #{min,jdbcType=TIME}, 
+      #{mid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.kkbox.domain.Music">
+    insert into t_music
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="songerid != null">
+        songerid,
+      </if>
+      <if test="musicname != null">
+        musicname,
+      </if>
+      <if test="lyrics != null">
+        lyrics,
+      </if>
+      <if test="albuname != null">
+        albuname,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="collection != null">
+        collection,
+      </if>
+      <if test="comment != null">
+        comment,
+      </if>
+      <if test="playcount != null">
+        playcount,
+      </if>
+      <if test="thumbnum != null">
+        thumbnum,
+      </if>
+      <if test="uploadtime != null">
+        uploadtime,
+      </if>
+      <if test="min != null">
+        min,
+      </if>
+      <if test="mid != null">
+        mid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="songerid != null">
+        #{songerid,jdbcType=INTEGER},
+      </if>
+      <if test="musicname != null">
+        #{musicname,jdbcType=VARCHAR},
+      </if>
+      <if test="lyrics != null">
+        #{lyrics,jdbcType=VARCHAR},
+      </if>
+      <if test="albuname != null">
+        #{albuname,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="collection != null">
+        #{collection,jdbcType=INTEGER},
+      </if>
+      <if test="comment != null">
+        #{comment,jdbcType=INTEGER},
+      </if>
+      <if test="playcount != null">
+        #{playcount,jdbcType=INTEGER},
+      </if>
+      <if test="thumbnum != null">
+        #{thumbnum,jdbcType=INTEGER},
+      </if>
+      <if test="uploadtime != null">
+        #{uploadtime,jdbcType=DATE},
+      </if>
+      <if test="min != null">
+        #{min,jdbcType=TIME},
+      </if>
+      <if test="mid != null">
+        #{mid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kkbox.domain.Music">
+    update t_music
+    <set>
+      <if test="songerid != null">
+        songerid = #{songerid,jdbcType=INTEGER},
+      </if>
+      <if test="musicname != null">
+        musicname = #{musicname,jdbcType=VARCHAR},
+      </if>
+      <if test="lyrics != null">
+        lyrics = #{lyrics,jdbcType=VARCHAR},
+      </if>
+      <if test="albuname != null">
+        albuname = #{albuname,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="collection != null">
+        collection = #{collection,jdbcType=INTEGER},
+      </if>
+      <if test="comment != null">
+        comment = #{comment,jdbcType=INTEGER},
+      </if>
+      <if test="playcount != null">
+        playcount = #{playcount,jdbcType=INTEGER},
+      </if>
+      <if test="thumbnum != null">
+        thumbnum = #{thumbnum,jdbcType=INTEGER},
+      </if>
+      <if test="uploadtime != null">
+        uploadtime = #{uploadtime,jdbcType=DATE},
+      </if>
+      <if test="min != null">
+        min = #{min,jdbcType=TIME},
+      </if>
+      <if test="mid != null">
+        mid = #{mid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kkbox.domain.Music">
+    update t_music
+    set songerid = #{songerid,jdbcType=INTEGER},
+      musicname = #{musicname,jdbcType=VARCHAR},
+      lyrics = #{lyrics,jdbcType=VARCHAR},
+      albuname = #{albuname,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      collection = #{collection,jdbcType=INTEGER},
+      comment = #{comment,jdbcType=INTEGER},
+      playcount = #{playcount,jdbcType=INTEGER},
+      thumbnum = #{thumbnum,jdbcType=INTEGER},
+      uploadtime = #{uploadtime,jdbcType=DATE},
+      min = #{min,jdbcType=TIME},
+      mid = #{mid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

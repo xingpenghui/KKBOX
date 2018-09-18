@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kkbox.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.kkbox.domain.User">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="createtime" jdbcType="DATE" property="createtime" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="rankid" jdbcType="INTEGER" property="rankid" />
+    <result column="capycity" jdbcType="VARCHAR" property="capycity" />
+    <result column="flag" jdbcType="INTEGER" property="flag" />
+    <result column="endtime" jdbcType="DATE" property="endtime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, username, email, phone, password, createtime, type, rankid, capycity, flag, endtime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kkbox.domain.User">
+    insert into t_user (id, username, email, 
+      phone, password, createtime, 
+      type, rankid, capycity, 
+      flag, endtime)
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{phone,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{createtime,jdbcType=DATE}, 
+      #{type,jdbcType=INTEGER}, #{rankid,jdbcType=INTEGER}, #{capycity,jdbcType=VARCHAR}, 
+      #{flag,jdbcType=INTEGER}, #{endtime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.kkbox.domain.User">
+    insert into t_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="username != null">
+        username,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="createtime != null">
+        createtime,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="rankid != null">
+        rankid,
+      </if>
+      <if test="capycity != null">
+        capycity,
+      </if>
+      <if test="flag != null">
+        flag,
+      </if>
+      <if test="endtime != null">
+        endtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=DATE},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="rankid != null">
+        #{rankid,jdbcType=INTEGER},
+      </if>
+      <if test="capycity != null">
+        #{capycity,jdbcType=VARCHAR},
+      </if>
+      <if test="flag != null">
+        #{flag,jdbcType=INTEGER},
+      </if>
+      <if test="endtime != null">
+        #{endtime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kkbox.domain.User">
+    update t_user
+    <set>
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createtime = #{createtime,jdbcType=DATE},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="rankid != null">
+        rankid = #{rankid,jdbcType=INTEGER},
+      </if>
+      <if test="capycity != null">
+        capycity = #{capycity,jdbcType=VARCHAR},
+      </if>
+      <if test="flag != null">
+        flag = #{flag,jdbcType=INTEGER},
+      </if>
+      <if test="endtime != null">
+        endtime = #{endtime,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kkbox.domain.User">
+    update t_user
+    set username = #{username,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=DATE},
+      type = #{type,jdbcType=INTEGER},
+      rankid = #{rankid,jdbcType=INTEGER},
+      capycity = #{capycity,jdbcType=VARCHAR},
+      flag = #{flag,jdbcType=INTEGER},
+      endtime = #{endtime,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
