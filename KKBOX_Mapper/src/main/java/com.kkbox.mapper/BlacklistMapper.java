@@ -1,3 +1,4 @@
+
 package com.kkbox.mapper;
 
 import com.kkbox.common.result.R;
@@ -9,7 +10,7 @@ public interface BlacklistMapper {
     /**
      *
      * 把用户从黑名单中移除
-     * @param id
+     * @param uid
      * @return
      * @author JIN BAO QUAN
      * @date 2018/9/18 17:18
@@ -41,7 +42,6 @@ public interface BlacklistMapper {
      * @date 2018/9/18 17:49
      */
     List<Blacklist> selectAll();
-
 
 
 

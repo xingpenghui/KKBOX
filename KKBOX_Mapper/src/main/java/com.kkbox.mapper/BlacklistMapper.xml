@@ -10,7 +10,7 @@
     id, uid, bid
   </sql>
   <select id="selectById"  resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from t_blacklist
     where id = #{id,jdbcType=INTEGER}
