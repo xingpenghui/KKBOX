@@ -1,9 +1,9 @@
-package com.kkbox.controller;
+package com.kkbox.controller.user;
 
 import com.kkbox.common.result.R;
 import com.kkbox.domain.Blacklist;
 import com.kkbox.domain.User;
-import com.kkbox.service.BlackListService;
+import com.kkbox.service.user.BlackListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

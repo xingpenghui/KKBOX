@@ -1,11 +1,13 @@
 package com.kkbox.mapper;
 
 import com.kkbox.domain.Interest;
+import org.apache.ibatis.annotations.Param;
 
 public interface InterestMapper {
     int deleteByPrimaryKey(Integer id);
 
-    int insert(Interest record);
+    //关注
+    int insert(@Param("id") int id, @Param("iid") int iid);
 
     int insertSelective(Interest record);
 

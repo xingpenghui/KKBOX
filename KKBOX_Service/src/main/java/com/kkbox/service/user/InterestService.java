@@ -1,4 +1,6 @@
-package com.kkbox.service;
+package com.kkbox.service.user;
 
-public class InterestService {
+public interface InterestService {
+
+    boolean interest(int id, int iid);
 }

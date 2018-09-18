@@ -1,10 +1,10 @@
-package com.kkbox.serviceimpl;
+package com.kkbox.serviceimpl.user;
 
 import com.kkbox.common.result.R;
 import com.kkbox.common.util.ResultUtil;
 import com.kkbox.domain.Blacklist;
 import com.kkbox.mapper.BlacklistMapper;
-import com.kkbox.service.BlackListService;
+import com.kkbox.service.user.BlackListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
